@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Privacy Policy · BookWorm</title>
+<meta name="description" content="Privacy Policy for BookWorm — the cozy reading tracker for iOS. Your reading data stays yours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary:    #FDFAF5;
+    --bg-secondary:  #F5F0E8;
+    --bg-tertiary:   #EDE7D9;
+    --brand-green:   #4CAF72;
+    --brand-green-dark: #3A8F5A;
+    --brand-green-light: #D4EDDC;
+    --brand-brown:   #8B5E3C;
+    --brand-brown-light: #E8D5C0;
+    --accent-coral:  #FF7043;
+    --text-primary:  #2C1810;
+    --text-secondary:#6B4E3D;
+    --text-tertiary: #A0867A;
+    --text-on-dark:  #FDFAF5;
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-pill: 999px;
+
+    --shadow-card:  0 4px 12px rgba(139, 94, 60, 0.08);
+    --shadow-float: 0 8px 24px rgba(139, 94, 60, 0.14);
+    --shadow-subtle:0 2px 6px rgba(139, 94, 60, 0.05);
+
+    --maxw: 760px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-primary:    #1A120B;
+      --bg-secondary:  #241810;
+      --bg-tertiary:   #2E2015;
+      --brand-green:   #5DC882;
+      --brand-green-dark: #4AAF6E;
+      --brand-green-light: #1E3D2A;
+      --brand-brown:   #C49A70;
+      --brand-brown-light: #3D2B1A;
+      --accent-coral:  #FF8A65;
+      --text-primary:  #F5EFE6;
+      --text-secondary:#C4A882;
+      --text-tertiary: #8A7060;
+      --text-on-dark:  #1A120B;
+      --shadow-card:  0 4px 12px rgba(0, 0, 0, 0.30);
+      --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.40);
+      --shadow-subtle:0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-primary);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: var(--brand-green-dark); text-decoration: none; font-weight: 500; }
+  a:hover { text-decoration: underline; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 72px 24px 56px;
+    text-align: center;
+    background:
+      radial-gradient(120% 90% at 50% -10%, var(--brand-green-light) 0%, transparent 55%),
+      var(--bg-secondary);
+    border-bottom: 1px solid var(--brand-brown-light);
+  }
+
+  .worm {
+    width: 96px; height: 96px;
+    margin: 0 auto 20px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 56px;
+    background: linear-gradient(160deg, var(--brand-green-light), var(--brand-brown-light));
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-float);
+    animation: bob 3.2s ease-in-out infinite;
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50%      { transform: translateY(-8px) rotate(2deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .worm { animation: none; }
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 6vw, 42px);
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .hero .app-name { color: var(--brand-green-dark); }
+  .hero p {
+    color: var(--text-secondary);
+    max-width: 460px;
+    margin: 0 auto;
+    font-size: 17px;
+  }
+  .updated {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--brand-brown);
+    background: var(--bg-primary);
+    border: 1px solid var(--brand-brown-light);
+    border-radius: var(--radius-pill);
+  }
+
+  /* ---------- Layout ---------- */
+  main {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 48px 24px 24px;
+  }
+
+  /* ---------- Summary highlights ---------- */
+  .tldr {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+  .tldr-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--brand-brown-light);
+    border-radius: var(--radius-md);
+    padding: 18px 18px 20px;
+    box-shadow: var(--shadow-subtle);
+  }
+  .tldr-card .icon { font-size: 24px; display: block; margin-bottom: 8px; }
+  .tldr-card h3 { font-size: 16px; margin-bottom: 4px; }
+  .tldr-card p { font-size: 14px; color: var(--text-secondary); }
+
+  /* ---------- Sections ---------- */
+  section { margin-bottom: 40px; }
+  section h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--brand-green-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  section h2 .num {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 30px; height: 30px;
+    flex: 0 0 30px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    color: var(--text-on-dark);
+    background: var(--brand-green);
+    border-radius: var(--radius-pill);
+  }
+  section h3 {
+    font-size: 17px;
+    margin: 22px 0 8px;
+  }
+  p { margin-bottom: 14px; color: var(--text-primary); }
+  section p { color: var(--text-secondary); }
+
+  ul { margin: 0 0 14px 0; padding-left: 4px; list-style: none; }
+  li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+  }
+  li::before {
+    content: "🐛";
+    position: absolute;
+    left: 0; top: 1px;
+    font-size: 13px;
+  }
+  li strong { color: var(--text-primary); font-weight: 700; }
+
+  .callout {
+    background: var(--brand-green-light);
+    border-left: 4px solid var(--brand-green);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
+    margin: 18px 0;
+  }
+  .callout p { margin: 0; color: var(--text-primary); }
+
+  /* ---------- Data table ---------- */
+  .table-wrap { overflow-x: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-card); margin: 8px 0 18px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-secondary);
+    font-size: 14.5px;
+    min-width: 480px;
+  }
+  th, td { text-align: left; padding: 13px 16px; vertical-align: top; }
+  thead th {
+    background: var(--brand-brown);
+    color: var(--text-on-dark);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  tbody tr { border-top: 1px solid var(--brand-brown-light); }
+  tbody td { color: var(--text-secondary); }
+  tbody td:first-child { color: var(--text-primary); font-weight: 500; }
+
+  /* ---------- Contact card ---------- */
+  .contact {
+    background: var(--bg-secondary);
+    border: 1px solid var(--brand-brown-light);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+  }
+  .contact h2 { border: none; justify-content: center; padding: 0; margin-bottom: 8px; }
+  .contact p { color: var(--text-secondary); margin-bottom: 18px; }
+  .btn {
+    display: inline-block;
+    background: var(--brand-green);
+    color: var(--text-on-dark);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-float);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .btn:hover { background: var(--brand-green-dark); text-decoration: none; transform: translateY(-1px); }
+  .btn:active { transform: scale(0.97); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center;
+    padding: 40px 24px 56px;
+    color: var(--text-tertiary);
+    font-size: 13px;
+  }
+  footer .worm-mini { font-size: 18px; display: block; margin-bottom: 8px; }
+  footer a { color: var(--text-secondary); }
+
+  @media (max-width: 520px) {
+    .hero { padding: 56px 20px 44px; }
+    main { padding: 36px 20px 16px; }
+    section h2 { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="worm" role="img" aria-label="BookWorm mascot">🐛</div>
+    <h1>Privacy Policy<br><span class="app-name">BookWorm</span></h1>
+    <p>Your reading life is personal. Here's exactly what BookWorm does — and doesn't do — with your data.</p>
+    <span class="updated">Last updated: 16 July 2026</span>
+  </header>
+
+  <main>
+
+    <!-- At a glance -->
+    <div class="tldr" aria-label="Privacy at a glance">
+      <div class="tldr-card">
+        <span class="icon">🔒</span>
+        <h3>Stored on your device</h3>
+        <p>Your books and reading history live on your iPhone and your own private iCloud.</p>
+      </div>
+      <div class="tldr-card">
+        <span class="icon">🚫</span>
+        <h3>No tracking, no ads</h3>
+        <p>We never track you across apps or websites, and we show no advertising.</p>
+      </div>
+      <div class="tldr-card">
+        <span class="icon">🙈</span>
+        <h3>No accounts, no selling</h3>
+        <p>No sign-up required. We never sell or share your personal data. Ever.</p>
+      </div>
+    </div>
+
+    <section>
+      <h2><span class="num">1</span>Who We Are</h2>
+      <p>BookWorm ("the app", "we", "us", or "our") is a reading tracker for iOS that helps you log books, follow your reading progress, build reading streaks, and organise your personal library. This Privacy Policy explains how we handle information when you use the app.</p>
+      <p>This policy applies to the BookWorm iOS application distributed through the Apple App Store. By using BookWorm, you agree to the practices described here.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">2</span>Our Privacy Principle</h2>
+      <div class="callout">
+        <p><strong>BookWorm is built to be private by design.</strong> The app works without an account, without a login, and without sending your library to our servers. Your reading data belongs to you — it stays on your device and, if you choose, syncs privately through <em>your own</em> iCloud account.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">3</span>Information Stored on Your Device</h2>
+      <p>Everything you create in BookWorm is stored locally on your device. We do not receive or have access to this content. It includes:</p>
+      <ul>
+        <li><strong>Your library:</strong> book titles, authors, cover images, formats, genres, and reading status.</li>
+        <li><strong>Reading activity:</strong> progress, page/time positions, start and finish dates, reading log, and streaks.</li>
+        <li><strong>Personal touches:</strong> a display name and profile photo you optionally add, reading goals, favourites, and app settings such as language, theme, and notification preferences.</li>
+      </ul>
+      <p>This information never leaves your device except through the private iCloud sync described below.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">4</span>iCloud Sync (CloudKit)</h2>
+      <p>If iCloud is enabled on your device, BookWorm can sync your library across your Apple devices using Apple's <strong>CloudKit private database</strong>. This data is stored in <em>your</em> personal iCloud account, protected by your Apple ID.</p>
+      <ul>
+        <li>The developer of BookWorm <strong>cannot see, access, or read</strong> the contents of your private iCloud database.</li>
+        <li>This sync is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a> and iCloud terms.</li>
+        <li>You can turn iCloud sync off at any time in your device's iCloud settings.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">5</span>Analytics</h2>
+      <p>To understand how features are used and to improve the app, BookWorm collects a small amount of <strong>anonymous, aggregated usage data</strong> using <a href="https://posthog.com/privacy" target="_blank" rel="noopener">PostHog</a>. Data is processed on PostHog's <strong>EU-based cloud</strong> for GDPR compliance.</p>
+      <p>This analytics data:</p>
+      <ul>
+        <li><strong>Is not used to track you</strong> across other apps or websites (no IDFA, no cross-app tracking).</li>
+        <li><strong>Contains no personal content</strong> — we never send book titles, author names, your display name, notes, or profile photo.</li>
+        <li>Consists of anonymous product-interaction events, such as which screens are opened or which features are used, to help us fix problems and prioritise improvements.</li>
+      </ul>
+      <p>In line with our <a href="#section-8">App Store privacy disclosures</a>, this data is <strong>not linked to your identity</strong> and is <strong>not used for tracking</strong>.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">6</span>Third-Party Services</h2>
+      <p>BookWorm relies on a few external services strictly to make features work. We share only what is technically necessary, and we do not sell data to anyone.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Purpose</th>
+              <th>What is shared</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Apple iTunes Search API</td>
+              <td>Searching for books and looking up covers, titles &amp; authors</td>
+              <td>Your search terms or a scanned ISBN. No API key or account is used.</td>
+            </tr>
+            <tr>
+              <td>Open Library</td>
+              <td>Enriching a selected book with its page count</td>
+              <td>A book's ISBN or its title &amp; author.</td>
+            </tr>
+            <tr>
+              <td>Apple iCloud / CloudKit</td>
+              <td>Private cross-device sync</td>
+              <td>Your library, stored in your own iCloud account.</td>
+            </tr>
+            <tr>
+              <td>Apple App Store &amp; StoreKit</td>
+              <td>Processing optional subscriptions and tips</td>
+              <td>Purchases are handled entirely by Apple. We never see your payment details.</td>
+            </tr>
+            <tr>
+              <td>PostHog (EU)</td>
+              <td>Anonymous usage analytics</td>
+              <td>Anonymous, non-personal product-interaction events only.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>These services process data under their own privacy policies. Book searches are sent to Apple and Open Library only when you actively search for or scan a book.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">7</span>Purchases &amp; Subscriptions</h2>
+      <p>BookWorm offers optional subscriptions and tips through Apple's in-app purchase system (StoreKit). All payments are processed by Apple. We never receive or store your credit-card number, billing address, or Apple ID password. Subscription management and receipts are handled through your Apple account settings.</p>
+    </section>
+
+    <section id="section-8">
+      <h2><span class="num">8</span>Notifications</h2>
+      <p>If you enable reading reminders, BookWorm schedules local notifications on your device (for example, a morning reading prompt and an evening progress reminder). These notifications are generated on-device and are not sent through any external server. You can disable them at any time in the app's settings or in your device's system settings.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">9</span>What We Do <em>Not</em> Do</h2>
+      <ul>
+        <li>We do <strong>not</strong> require you to create an account or provide an email address to use the app.</li>
+        <li>We do <strong>not</strong> sell, rent, or trade your personal information.</li>
+        <li>We do <strong>not</strong> track you across other companies' apps or websites.</li>
+        <li>We do <strong>not</strong> show third-party advertising.</li>
+        <li>We do <strong>not</strong> collect your precise location, contacts, or health data.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">10</span>Data Retention &amp; Deletion</h2>
+      <p>Because your library is stored locally and in your own iCloud account, <strong>you are always in control</strong>:</p>
+      <ul>
+        <li>Deleting a book, or all your data, within the app removes it from your device (and syncs that deletion to your iCloud).</li>
+        <li>Deleting the app removes all locally stored data from that device.</li>
+        <li>To remove synced data everywhere, delete it in the app while signed in to iCloud, or manage BookWorm's data in your device's iCloud settings.</li>
+        <li>Anonymous analytics events cannot be tied to you and are retained only in aggregate by PostHog.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">11</span>Your Privacy Rights</h2>
+      <p>Depending on where you live, you may have rights under laws such as the EU/UK <strong>GDPR</strong> or the <strong>California Consumer Privacy Act (CCPA/CPRA)</strong>, including the right to access, correct, delete, or port your data, and the right not to be discriminated against for exercising those rights.</p>
+      <p>Because BookWorm does not hold your personal library on our own servers and does not collect data that identifies you, most of these rights are exercised directly within the app (by editing or deleting your data). For any request relating to the anonymous analytics we process, or any other privacy question, contact us using the details below and we will respond in accordance with applicable law.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">12</span>Children's Privacy</h2>
+      <p>BookWorm is not directed to children under the age of 13 (or the minimum age required in your country), and we do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will take appropriate steps to address it.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">13</span>Data Security</h2>
+      <p>We take reasonable measures to protect your information. Data in transit to the services listed above is protected using encryption (HTTPS/TLS). iCloud data is secured by Apple's infrastructure and your Apple ID. However, no method of electronic storage or transmission is 100% secure, and we cannot guarantee absolute security.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">14</span>International Data Transfers</h2>
+      <p>The third-party services we use may process data on servers located in various countries. We have chosen PostHog's EU cloud for analytics to support GDPR compliance. Where data is transferred internationally, it is done under the safeguards provided by the respective service providers.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">15</span>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in the app or in legal requirements. When we do, we will revise the "Last updated" date at the top of this page. Significant changes may also be communicated within the app. We encourage you to review this policy periodically.</p>
+    </section>
+
+    <section class="contact">
+      <h2>Questions? We'd love to hear from you 🐛</h2>
+      <p>If you have any questions or concerns about this Privacy Policy or your data, reach out any time:</p>
+      <a class="btn" href="mailto:markockidev@icloud.com">Contact the Developer</a>
+      <p style="margin-top:16px;margin-bottom:0;font-size:14px;">
+        <a href="mailto:markockidev@icloud.com">markockidev@icloud.com</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span class="worm-mini" role="img" aria-label="BookWorm">🐛</span>
+    BookWorm — a cozy reading companion.<br>
+    © 2026 BookWorm. All rights reserved. ·
+    <a href="mailto:markockidev@icloud.com">markockidev@icloud.com</a>
+  </footer>
+
+</body>
+</html>
