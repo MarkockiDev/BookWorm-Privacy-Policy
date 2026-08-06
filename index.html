@@ -287,7 +287,7 @@
     <div class="worm" role="img" aria-label="BookWorm mascot">🐛</div>
     <h1>Privacy Policy<br><span class="app-name">BookWorm</span></h1>
     <p>Your reading life is personal. Here's exactly what BookWorm does — and doesn't do — with your data.</p>
-    <span class="updated">Last updated: 16 July 2026</span>
+    <span class="updated">Last updated: 6 August 2026</span>
   </header>
 
   <main>
@@ -332,6 +332,13 @@
         <li><strong>Reading activity:</strong> progress, page/time positions, start and finish dates, reading log, and streaks.</li>
         <li><strong>Personal touches:</strong> a display name and profile photo you optionally add, reading goals, favourites, and app settings such as language, theme, and notification preferences.</li>
       </ul>
+      <p>BookWorm also uses certain device features only when you choose to use them:</p>
+      <ul>
+        <li><strong>Camera:</strong> if you scan a book barcode, BookWorm uses your camera to read the ISBN. Scanning happens on your device. No photo or video is stored or uploaded.</li>
+        <li><strong>Photos:</strong> when you save a share card, BookWorm asks for add-only photo permission so it can save an image. The app does not request read access to your photo library.</li>
+        <li><strong>Share cards:</strong> if you share a finished book, BookWorm creates an image with that book's title, author, cover, and reading dates on your device, then sends it only where you choose to share it.</li>
+        <li><strong>Widgets:</strong> if you add a BookWorm widget, the app shares only the data the widget needs (such as your current book, progress, and streak) through a private on-device App Group container. Lock Screen widgets may be visible to anyone who can see your screen.</li>
+      </ul>
       <p>This information never leaves your device except through the private iCloud sync described below.</p>
     </section>
 
@@ -347,14 +354,15 @@
 
     <section>
       <h2><span class="num">5</span>Analytics</h2>
-      <p>To understand how features are used and to improve the app, BookWorm collects a small amount of <strong>anonymous, aggregated usage data</strong> using <a href="https://posthog.com/privacy" target="_blank" rel="noopener">PostHog</a>. Data is processed on PostHog's <strong>EU-based cloud</strong> for GDPR compliance.</p>
+      <p>To understand how features are used and to improve the app, BookWorm collects a small amount of <strong>pseudonymous</strong> usage data using <a href="https://posthog.com/privacy" target="_blank" rel="noopener">PostHog</a>. Data is processed on PostHog's <strong>EU-based cloud</strong> for GDPR compliance.</p>
       <p>This analytics data:</p>
       <ul>
         <li><strong>Is not used to track you</strong> across other apps or websites (no IDFA, no cross-app tracking).</li>
-        <li><strong>Contains no personal content</strong> — we never send book titles, author names, your display name, notes, or profile photo.</li>
-        <li>Consists of anonymous product-interaction events, such as which screens are opened or which features are used, to help us fix problems and prioritise improvements.</li>
+        <li><strong>Contains no personal content</strong> — we never send book titles, author names, your display name, notes, your profile photo, or the text you type into search. For search, we record only query length and result count.</li>
+        <li><strong>Consists of product-interaction events</strong>, such as which screens are opened, which features are used, and onboarding choices, to help us fix problems and prioritise improvements.</li>
+        <li><strong>Is associated with a randomly generated app identifier</strong> and a small usage profile (for example reading goals, app language/theme, notification settings, library size, books finished, and audiobook usage).</li>
       </ul>
-      <p>In line with our <a href="#section-8">App Store privacy disclosures</a>, this data is <strong>not linked to your identity</strong> and is <strong>not used for tracking</strong>.</p>
+      <p>This data is <strong>not used for tracking</strong> and is never sold or shared for advertising.</p>
     </section>
 
     <section>
@@ -387,13 +395,23 @@
             </tr>
             <tr>
               <td>Apple App Store &amp; StoreKit</td>
-              <td>Processing optional subscriptions and tips</td>
+              <td>Processing optional one-time tips</td>
               <td>Purchases are handled entirely by Apple. We never see your payment details.</td>
             </tr>
             <tr>
+              <td>RevenueCat</td>
+              <td>Processing and validating optional tips, and remembering that you tipped</td>
+              <td>An app-generated anonymous user ID and Apple's purchase receipt. Never your payment details.</td>
+            </tr>
+            <tr>
               <td>PostHog (EU)</td>
-              <td>Anonymous usage analytics</td>
-              <td>Anonymous, non-personal product-interaction events only.</td>
+              <td>Pseudonymous usage analytics</td>
+              <td>Product-interaction events and app-level usage properties tied to a random app identifier.</td>
+            </tr>
+            <tr>
+              <td>Canny</td>
+              <td>Optional feature-suggestion board opened from Settings</td>
+              <td>Only what you choose to type there, under Canny's own privacy policy.</td>
             </tr>
           </tbody>
         </table>
@@ -402,8 +420,9 @@
     </section>
 
     <section>
-      <h2><span class="num">7</span>Purchases &amp; Subscriptions</h2>
-      <p>BookWorm offers optional subscriptions and tips through Apple's in-app purchase system (StoreKit). All payments are processed by Apple. We never receive or store your credit-card number, billing address, or Apple ID password. Subscription management and receipts are handled through your Apple account settings.</p>
+      <h2><span class="num">7</span>Purchases &amp; Tips</h2>
+      <p>BookWorm is free. It offers optional one-time tips through Apple's in-app purchase system. These are single payments, not subscriptions — nothing recurs and nothing is unlocked. All payments are processed by Apple. We never receive or store your credit-card number, billing address, or Apple ID password. Receipts are handled through your Apple account settings.</p>
+      <p>We use <strong>RevenueCat</strong> to validate purchases and remember whether you have tipped so the app can thank you. RevenueCat receives an app-generated anonymous identifier and Apple's purchase receipt, but never your name, email, or payment details. RevenueCat does not handle payment processing; Apple does.</p>
     </section>
 
     <section id="section-8">
@@ -429,14 +448,14 @@
         <li>Deleting a book, or all your data, within the app removes it from your device (and syncs that deletion to your iCloud).</li>
         <li>Deleting the app removes all locally stored data from that device.</li>
         <li>To remove synced data everywhere, delete it in the app while signed in to iCloud, or manage BookWorm's data in your device's iCloud settings.</li>
-        <li>Anonymous analytics events cannot be tied to you and are retained only in aggregate by PostHog.</li>
+        <li>Analytics events are tied to a randomly generated app identifier and retained by PostHog on our behalf. If you reset all app data, a new identifier is created and past analytics can no longer be associated with your device.</li>
       </ul>
     </section>
 
     <section>
       <h2><span class="num">11</span>Your Privacy Rights</h2>
       <p>Depending on where you live, you may have rights under laws such as the EU/UK <strong>GDPR</strong> or the <strong>California Consumer Privacy Act (CCPA/CPRA)</strong>, including the right to access, correct, delete, or port your data, and the right not to be discriminated against for exercising those rights.</p>
-      <p>Because BookWorm does not hold your personal library on our own servers and does not collect data that identifies you, most of these rights are exercised directly within the app (by editing or deleting your data). For any request relating to the anonymous analytics we process, or any other privacy question, contact us using the details below and we will respond in accordance with applicable law.</p>
+      <p>Because BookWorm does not hold your personal library on our own servers, most of these rights are exercised directly within the app by editing or deleting your data. Resetting all data in the app also resets your analytics identifier. If you would like us to erase the analytics profile associated with your device, or you have any other privacy question, contact us using the details below and we will respond in accordance with applicable law.</p>
     </section>
 
     <section>
@@ -451,12 +470,12 @@
 
     <section>
       <h2><span class="num">14</span>International Data Transfers</h2>
-      <p>The third-party services we use may process data on servers located in various countries. We have chosen PostHog's EU cloud for analytics to support GDPR compliance. Where data is transferred internationally, it is done under the safeguards provided by the respective service providers.</p>
+      <p>The third-party services we use may process data on servers located in various countries. We have chosen PostHog's EU cloud for analytics to support GDPR compliance. RevenueCat, which validates purchases, processes data in the United States. Where data is transferred internationally, it is done under the safeguards provided by the respective service providers.</p>
     </section>
 
     <section>
       <h2><span class="num">15</span>Changes to This Policy</h2>
-      <p>We may update this Privacy Policy from time to time to reflect changes in the app or in legal requirements. When we do, we will revise the "Last updated" date at the top of this page. Significant changes may also be communicated within the app. We encourage you to review this policy periodically.</p>
+      <p>We may update this Privacy Policy from time to time to reflect changes in the app or in legal requirements. When we do, we will revise the "Last updated" date at the top of this page. This version was last updated on 6 August 2026. Significant changes may also be communicated within the app. We encourage you to review this policy periodically.</p>
     </section>
 
     <section class="contact">
