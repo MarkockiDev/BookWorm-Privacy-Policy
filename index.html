@@ -419,6 +419,10 @@
 
   .section p { color: var(--text-secondary); font-size: 15.5px; line-height: 1.62; }
   .section p + p { margin-top: var(--s-12); }
+  /* A paragraph after a bullet list needs the same gap as one after a paragraph.
+     Only `p + p` was spaced, so the closing line of §5 and §10 sat hard against
+     the final bullet and read as part of it. */
+  .section ul + p { margin-top: var(--s-12); }
   .section h3 {
     font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
     color: var(--text-tertiary);
@@ -446,6 +450,9 @@
   }
   .callout svg { flex: 0 0 20px; width: 20px; height: 20px; color: var(--brand-green); margin-top: 3px; }
   .callout p { color: var(--text-primary); font-size: 15.5px; }
+  /* When a callout follows body copy inside a section, it needs the same
+     rhythm as a paragraph would. */
+  .section p + .callout, .section ul + .callout { margin-top: var(--s-16); }
 
   /* Feature / service rows */
   .rows { margin-top: var(--s-12); }
@@ -639,7 +646,7 @@
   <div class="badges">
     <span class="badge" style="--tint:var(--accent-gold)">
       <svg aria-hidden="true"><use href="#i-clock"/></svg>
-      Updated <time datetime="2026-08-06">6 August 2026</time>
+      Updated <time datetime="2026-08-10">10 August 2026</time>
     </span>
     <span class="badge">
       <svg aria-hidden="true"><use href="#i-apple"/></svg>
@@ -821,9 +828,13 @@
           <li><strong>Is not used to track you</strong> across other apps or websites — no IDFA, no cross-app tracking.</li>
           <li><strong>Contains no personal content.</strong> We never send book titles, author names, your display name, notes, your profile photo, or the text you type into search. For search, we record only query length and result count.</li>
           <li><strong>Consists of product-interaction events</strong>, such as which screens are opened, which features are used, and onboarding choices, to help us fix problems and prioritise improvements.</li>
-          <li><strong>Is associated with a randomly generated app identifier</strong> and a small usage profile — for example reading goals, app language and theme, notification settings, library size, books finished, and audiobook usage.</li>
+          <li><strong>Is associated with a randomly generated app identifier</strong> and a small usage profile — for example reading goals, app language and theme, notification settings, library size, books finished, audiobook usage, and whether you have set a profile photo (never the photo itself).</li>
         </ul>
         <p>This data is <strong>not used for tracking</strong> and is never sold or shared for advertising.</p>
+        <div class="callout">
+          <svg aria-hidden="true"><use href="#i-shield"/></svg>
+          <p><strong>You can turn analytics off.</strong> In the app, open <em>Settings</em>, find <em>Share Usage Data</em> beside the Privacy Policy link, switch it off and tap Save. Collection stops immediately, nothing else about the app changes, and your choice is remembered even if you later reset all your data.</p>
+        </div>
       </section>
 
       <!-- ================= WHO ELSE IS INVOLVED ================= -->
@@ -918,7 +929,8 @@
           <div class="medallion t-coral"><svg aria-hidden="true"><use href="#i-bell"/></svg></div>
           <h2><span class="section-index">SECTION 08</span>Notifications</h2>
         </div>
-        <p>If you enable reading reminders, BookWorm schedules local notifications on your device — for example a morning reading prompt and an evening progress reminder. These notifications are generated on-device and are not sent through any external server. You can disable them at any time in the app's settings or in your device's system settings.</p>
+        <p>If you enable reading reminders, BookWorm schedules local notifications on your device — for example a morning reading prompt, an evening progress reminder, and a nudge when a reading streak is at risk. These notifications are generated on-device and are not sent through any external server. You can disable them at any time in the app's settings or in your device's system settings.</p>
+        <p>Reminders also include an occasional weekly note, currently on Sundays, mentioning that BookWorm is free and that you can leave an optional tip if you would like to. It contains no advertising and links only to BookWorm's own tip screen. It is part of the same reminder setting, so turning reminders off turns it off too.</p>
       </section>
 
       <!-- ================= YOUR CONTROL ================= -->
@@ -958,7 +970,7 @@
           <h2><span class="section-index">SECTION 11</span>Your privacy rights</h2>
         </div>
         <p>Depending on where you live, you may have rights under laws such as the EU/UK <strong>GDPR</strong> or the <strong>California Consumer Privacy Act (CCPA/CPRA)</strong>, including the right to access, correct, delete, or port your data, and the right not to be discriminated against for exercising those rights.</p>
-        <p>Because BookWorm does not hold your personal library on our own servers, most of these rights are exercised directly within the app by editing or deleting your data. Resetting all data in the app also resets your analytics identifier. If you would like us to erase the analytics profile associated with your device, or you have any other privacy question, contact us using the details below and we will respond in accordance with applicable law.</p>
+        <p>Because BookWorm does not hold your personal library on our own servers, most of these rights are exercised directly within the app by editing or deleting your data. You can stop analytics collection entirely at any time using the <em>Share Usage Data</em> switch in Settings, and resetting all data in the app also resets your analytics identifier. If you would like us to erase the analytics profile associated with your device, or you have any other privacy question, contact us using the details below and we will respond in accordance with applicable law.</p>
       </section>
 
       <!-- ================= THE FINE PRINT ================= -->
@@ -993,7 +1005,7 @@
           <div class="medallion t-gold"><svg aria-hidden="true"><use href="#i-clock"/></svg></div>
           <h2><span class="section-index">SECTION 15</span>Changes to this policy</h2>
         </div>
-        <p>We may update this Privacy Policy from time to time to reflect changes in the app or in legal requirements. When we do, we will revise the "Last updated" date at the top of this page. This version was last updated on <strong>6 August 2026</strong>. Significant changes may also be communicated within the app. We encourage you to review this policy periodically.</p>
+        <p>We may update this Privacy Policy from time to time to reflect changes in the app or in legal requirements. When we do, we will revise the "Last updated" date at the top of this page. This version was last updated on <strong>10 August 2026</strong>. Significant changes may also be communicated within the app. We encourage you to review this policy periodically.</p>
       </section>
 
       <!-- ---------- Contact ---------- -->
