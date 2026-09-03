@@ -174,12 +174,27 @@
     display: flex; align-items: center; gap: var(--s-12);
   }
   .topbar .mark { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .skip-link {
+    position: fixed;
+    left: 16px;
+    top: 12px;
+    z-index: 80;
+    transform: translateY(-140%);
+    padding: 10px 14px;
+    border-radius: var(--r-pill);
+    background: var(--brand-green);
+    color: var(--on-green);
+    box-shadow: var(--shadow-float);
+    transition: transform 0.2s ease;
+  }
+  .skip-link:focus { transform: translateY(0); text-decoration: none; }
   .topbar .mark img, .topbar .mark .fallback {
-    width: 30px; height: 30px; flex: 0 0 30px;
-    border-radius: 8px;
+    width: 42px; height: 42px; flex: 0 0 42px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-subtle);
   }
   .wordmark {
-    font-size: 16px; font-weight: 600; letter-spacing: -0.01em;
+    font-size: 18px; font-weight: 700; letter-spacing: -0.015em;
     color: var(--text-primary);
   }
   .topbar .doc-label {
@@ -245,7 +260,7 @@
   }
 
   .hero-icon {
-    width: 116px; height: 116px;
+    width: clamp(136px, 18vw, 188px); height: clamp(136px, 18vw, 188px);
     margin: 0 auto var(--s-24);
     box-shadow: var(--shadow-icon);
     animation: float 5s ease-in-out infinite;
@@ -262,15 +277,15 @@
     margin-bottom: var(--s-12);
   }
   .hero h1 {
-    font-size: clamp(34px, 8.5vw, 52px);
+    font-size: clamp(42px, 9vw, 68px);
     font-weight: 700; letter-spacing: -0.025em; line-height: 1.05;
     margin-bottom: var(--s-16);
   }
   .hero h1 .accent { color: var(--green-ink); }
   .lede {
     color: var(--text-secondary);
-    font-size: 17.5px; line-height: 1.6;
-    max-width: 44ch; margin: 0 auto;
+    font-size: clamp(17px, 2.2vw, 21px); line-height: 1.55;
+    max-width: 48ch; margin: 0 auto;
     text-wrap: balance;
   }
 
@@ -565,7 +580,7 @@
 
   @media (max-width: 560px) {
     .hero { padding: calc(var(--header-h) + 40px) var(--s-20) var(--s-32); }
-    .hero-icon { width: 96px; height: 96px; }
+    .hero-icon { width: 120px; height: 120px; }
     .section { padding: var(--s-20) var(--s-16); }
     .row-divider { margin-left: 54px; }
     .menu-head { margin: var(--s-32) 0 var(--s-16); }
@@ -574,6 +589,8 @@
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#policy">Skip to policy</a>
 
 <div class="progress" role="presentation"></div>
 
@@ -627,7 +644,7 @@
 <header class="topbar">
   <div class="topbar-inner">
     <a class="mark" href="#top" aria-label="BookWorm — back to top">
-      <img class="app-icon" src="icon.png" alt="" width="30" height="30" data-icon>
+      <img class="app-icon" src="icon.png" alt="" width="42" height="42" data-icon>
       <span class="wordmark">BookWorm</span>
     </a>
     <span class="doc-label">Privacy Policy</span>
@@ -639,14 +656,14 @@
 <section class="hero">
   <img class="app-icon hero-icon" src="icon.png"
        alt="The BookWorm app icon — a bookworm reading in a lamp-lit burrow"
-       width="116" height="116" data-icon data-fallback-emoji="🐛">
+       width="188" height="188" data-icon data-fallback-emoji="🐛">
   <p class="eyebrow">BookWorm for iOS</p>
   <h1>Privacy <span class="accent">Policy</span></h1>
   <p class="lede">Your reading life is personal. Here is exactly what BookWorm does — and never does — with your data.</p>
   <div class="badges">
     <span class="badge" style="--tint:var(--accent-gold)">
       <svg aria-hidden="true"><use href="#i-clock"/></svg>
-      Updated <time datetime="2026-08-10">10 August 2026</time>
+      Updated <time datetime="2026-09-03">3 September 2026</time>
     </span>
     <span class="badge">
       <svg aria-hidden="true"><use href="#i-apple"/></svg>
@@ -684,7 +701,7 @@
       </nav>
     </aside>
 
-    <main class="content">
+    <main class="content" id="policy">
 
       <!-- ---------- At a glance ---------- -->
       <h2 class="menu-head rise"><span>Privacy at a glance</span></h2>
@@ -831,10 +848,6 @@
           <li><strong>Is associated with a randomly generated app identifier</strong> and a small usage profile — for example reading goals, app language and theme, notification settings, library size, books finished, audiobook usage, and whether you have set a profile photo (never the photo itself).</li>
         </ul>
         <p>This data is <strong>not used for tracking</strong> and is never sold or shared for advertising.</p>
-        <div class="callout">
-          <svg aria-hidden="true"><use href="#i-shield"/></svg>
-          <p><strong>You can turn analytics off.</strong> In the app, open <em>Settings</em>, find <em>Share Usage Data</em> beside the Privacy Policy link, switch it off and tap Save. Collection stops immediately, nothing else about the app changes, and your choice is remembered even if you later reset all your data.</p>
-        </div>
       </section>
 
       <!-- ================= WHO ELSE IS INVOLVED ================= -->
@@ -970,7 +983,7 @@
           <h2><span class="section-index">SECTION 11</span>Your privacy rights</h2>
         </div>
         <p>Depending on where you live, you may have rights under laws such as the EU/UK <strong>GDPR</strong> or the <strong>California Consumer Privacy Act (CCPA/CPRA)</strong>, including the right to access, correct, delete, or port your data, and the right not to be discriminated against for exercising those rights.</p>
-        <p>Because BookWorm does not hold your personal library on our own servers, most of these rights are exercised directly within the app by editing or deleting your data. You can stop analytics collection entirely at any time using the <em>Share Usage Data</em> switch in Settings, and resetting all data in the app also resets your analytics identifier. If you would like us to erase the analytics profile associated with your device, or you have any other privacy question, contact us using the details below and we will respond in accordance with applicable law.</p>
+        <p>Because BookWorm does not hold your personal library on our own servers, most of these rights are exercised directly within the app by editing or deleting your data. Resetting all data in the app also resets your analytics identifier. If you would like us to erase the analytics profile associated with your device, or you have any other privacy question, contact us using the details below and we will respond in accordance with applicable law.</p>
       </section>
 
       <!-- ================= THE FINE PRINT ================= -->
@@ -1005,7 +1018,7 @@
           <div class="medallion t-gold"><svg aria-hidden="true"><use href="#i-clock"/></svg></div>
           <h2><span class="section-index">SECTION 15</span>Changes to this policy</h2>
         </div>
-        <p>We may update this Privacy Policy from time to time to reflect changes in the app or in legal requirements. When we do, we will revise the "Last updated" date at the top of this page. This version was last updated on <strong>10 August 2026</strong>. Significant changes may also be communicated within the app. We encourage you to review this policy periodically.</p>
+        <p>We may update this Privacy Policy from time to time to reflect changes in the app or in legal requirements. When we do, we will revise the "Last updated" date at the top of this page. This version was last updated on <strong>3 September 2026</strong>. Significant changes may also be communicated within the app. We encourage you to review this policy periodically.</p>
       </section>
 
       <!-- ---------- Contact ---------- -->
